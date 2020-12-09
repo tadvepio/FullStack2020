@@ -1,0 +1,32 @@
+#Done with https://www.websequencediagrams.com/
+
+#0.4: New note
+
+note over browser:
+Client creates a new list item by typing text to the empty field and
+then pushing the save button to start the updating.
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTTP status code 302
+note over browser:
+Url-redirect(302), server request a GET from address defined in
+headers Location. In this case /notes
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: html code
+note over browser:
+Html links fetch/GET rest of the files
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/mains.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+note over browser:
+Like previously, main.js executes GET request from server
+for data.json
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: data.json
+note over browser:
+Update succesfull
+end note
