@@ -4,7 +4,7 @@
 
 note over browser:
 Client creates a new list item by typing text to the empty field and
-then pushing the save button to start the updating.
+then pushing the save button to start the updating. This creates a table: with content and date
 end note
 browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
 server-->browser: HTTP status code 302
@@ -25,8 +25,8 @@ note over browser:
 Like previously, main.js executes GET request from server
 for data.json
 end note
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
-server-->browser: data.json
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: data.json(with the updated content)
 note over browser:
 Update succesfull
 end note

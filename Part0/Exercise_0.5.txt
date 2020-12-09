@@ -1,0 +1,20 @@
+#https://www.websequencediagrams.com/
+#
+#Exercise 0.5: Single page app
+note over browser:
+User enters the url
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+note over browser:
+The html is similar, but the only difference is spa.js
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: spa.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: data.json
+note over browser:
+The page is loaded
+end note
