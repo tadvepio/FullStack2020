@@ -1,0 +1,16 @@
+#https://www.websequencediagrams.com/
+#
+#Exercise 0.6: New note
+note over browser:
+The new post is handled with event handler, that creates new json-data and adds it to the list.
+The header needs the content-type JSON so the server knows how to parse.
+preventDefault() prevents the normal GET methods.
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over server:
+The list is updated
+end note
+server-->browser: new list, status code 201(created)
+note over browser:
+The page/notelist is updated. Thanks to the js file, only the content is updated.
+end note
